@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="aebUQQDbDGzBISMxwKxZ" name="ページ1">
-        <mxGraphModel dx="635" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="771" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -40,7 +40,7 @@
                 <mxCell id="108" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;first_name_kana(名)&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;　(string型, NOT NULL&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;)&lt;/span&gt;" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" vertex="1" parent="52">
                     <mxGeometry y="236" width="310" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="65" value="birth_date&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;　(DATE型, NOT NULL&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;)&lt;/span&gt;" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" parent="52" vertex="1">
+                <mxCell id="65" value="birth_date&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;　(date型, NOT NULL&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;)&lt;/span&gt;" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" parent="52" vertex="1">
                     <mxGeometry y="266" width="310" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="100" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endSize=30;startSize=30;endArrow=ERoneToMany;endFill=0;startArrow=ERone;startFill=0;rounded=0;curved=0;" parent="1" source="66" target="94" edge="1">
@@ -60,7 +60,7 @@
                 <mxCell id="68" value="name&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;　(string型, NOT NULL&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;)&lt;/span&gt;" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" parent="66" vertex="1">
                     <mxGeometry y="56" width="290" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="69" value="description(商品情報)&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;　(TEXT型, NOT NULL&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;)&lt;/span&gt;" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" parent="66" vertex="1">
+                <mxCell id="69" value="description(商品情報)&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;　(text型, NOT NULL&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;)&lt;/span&gt;" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" parent="66" vertex="1">
                     <mxGeometry y="86" width="290" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="70" value="category_id&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;　(integer型, NOT NULL&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;)&lt;/span&gt;" style="text;strokeColor=none;fillColor=default;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" parent="66" vertex="1">

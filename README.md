@@ -44,7 +44,7 @@ has_many orders
 
 |Column|Type|Options|
 |name-------------|string----|null: false|
-|description------|TEXT------|null: false|
+|description------|text------|null: false|
 |category_id------|integer---|null: false|
 |condition_id-----|integer---|null: false|
 |shipping_costs_id|integer---|null: false|
@@ -67,6 +67,7 @@ has_one :order
 ### Association
 belongs_to user
 belongs_to item
+belongs_to address
 
 
 ## addresses
