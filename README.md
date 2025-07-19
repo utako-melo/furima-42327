@@ -26,12 +26,14 @@ Things you may want to cover:
 ## users
 
 |Column|Type|Options|
-|nickname--------|VARCHAR(255)|null: false, unique: true|
-|email-----------|VARCHAR(255)|null: false, unique: true|
-|password_digest-|VARCHAR(255)|null: false|
-|last_name-------|VARCHAR(255)|null: false|
-|first_name------|VARCHAR(255)|null: false|
-|birth_date------|date--------|null: false|
+|nickname----------|string|null: false|
+|email-------------|string|null: false, unique: true|
+|encrypted_password|string|null: false|
+|last_name---------|string|null: false|
+|first_name--------|string|null: false|
+|last_name_kana----|string|null: false|
+|first_name_kana---|string|null: false|
+|birth_date--------|date--|null: false|
 
 ### Association
 has_many items
@@ -41,15 +43,19 @@ has_many orders
 ## items
 
 |Column|Type|Options|
-|name-------|VARCHAR(255)|null: false|
-|description|TEXT--------|null: false|
-|category---|VARCHAR(255)|null: false|
-|price------|integer-----|null: false|
-|user-------|references--|null: false, foreign key: true|
+|name-------------|string----|null: false|
+|description------|TEXT------|null: false|
+|category_id------|integer---|null: false|
+|condition_id-----|integer---|null: false|
+|shipping_costs_id|integer---|null: false|
+|prefecture_id----|integer---|null: false|
+|delivery_time_id-|integer---|null: false|
+|price------------|integer---|null: false|
+|user-------------|references|null: false, foreign key: true|
 
 ### Association
 belongs_to user
-has_many orders
+has_one :order
 
 
 ## orders
@@ -60,16 +66,19 @@ has_many orders
 
 ### Association
 belongs_to user
-belongs_to items
-belongs_to addresses
+belongs_to item
 
 
-## items
+## addresses
 
 |Column|Type|Options|
-|address-----|text--------|null: false|
-|phone_number|VARCHAR(255)|null: false|
-|order-------|references--|null: false, foreign key: true|
+|post_code----|string----|null: false|
+|prefecture_id|integer---|null: false|
+|city---------|string----|null: false|
+|house_number-|string----|null: false|
+|building_name|string----|
+|phone_number-|string----|null: false|
+|order--------|references|null: false, foreign key: true|
 
 ### Association
-belongs_to orders
+belongs_to order
