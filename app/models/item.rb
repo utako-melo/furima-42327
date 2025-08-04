@@ -18,7 +18,6 @@ class Item < ApplicationRecord
   }
 
   validates :category_id, :condition_id, :shipping_costs_id, :prefecture_id, :delivery_time_id,
-            presence: true,
-            numericality: { other_than: 1 }
+            numericality: { other_than: 1 , message: "can't be blank"}
 
 end
