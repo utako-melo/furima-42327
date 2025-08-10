@@ -18,16 +18,15 @@ class Item < ApplicationRecord
   }
 
   validates :category_id, :condition_id, :shipping_costs_id, :prefecture_id, :delivery_time_id,
-            numericality: { other_than: 1 , message: "can't be blank"}
+            numericality: { other_than: 1, message: "can't be blank" }
 
   validate :attached_image_presence
 
   private
 
   def attached_image_presence
-    unless image.attached?
-      errors.add(:image, "can't be blank")
-    end
-  end
+    return if image.attached?
 
+    errors.add(:image, "can't be blank")
+  end
 end
