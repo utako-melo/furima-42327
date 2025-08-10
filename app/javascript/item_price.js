@@ -1,19 +1,27 @@
 const price = () => {
   window.addEventListener('turbo:load', () => {
-    console.log("OK");
+
   });
 
   const priceInput = document.getElementById("item-price");
   priceInput.addEventListener("input", () => {
     const inputValue = priceInput.value;
+    const price = parseFloat(inputValue);
 
     const addTaxDom = document.getElementById("add-tax-price");
-    addTaxDom.innerHTML = Math.floor(inputValue * 0.1)
-
     const profitDom = document.getElementById("profit");
-    profitDom.innerHTML = Math.floor(inputValue * 0.9)
 
-  })
+    if (!isNaN(price)) {
+      const tax = Math.floor(price * 0.1);
+      addTaxDom.innerHTML = tax;
+
+      const profit = price - tax;
+      profitDom.innerHTML = profit;
+    } else {
+      addTaxDom.innerHTML = '';
+      profitDom.innerHTML = '';
+    }
+  });
 
 };
 
