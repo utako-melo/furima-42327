@@ -3,10 +3,10 @@ class OrderAddress
   attr_accessor :item_id, :user_id, :post_code, :prefecture_id, :city, :house_number, :building_name, :phone_number
 
   with_options presence: true do
+    validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'input correctly'}
+    validates :prefecture_id, numericality: {other_than: 1, message: 'Select'}
     validates :item_id, :user_id, :city, :house_number
-    validates :post_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
-    validates :prefecture_id, numericality: {other_than: 0, message: "can't be blank"}
-    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: "は10桁または11桁の半角数字で入力してください" }
+    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'input only number'}
   end
 
   def save
