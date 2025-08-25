@@ -6,6 +6,7 @@ FactoryBot.define do
     house_number { '8-9' }
     building_name { 'テストビル' }
     phone_number { '09098765432' }
+    token {"tok_abcdefghijk00000000000000000"}
 
     association :user, :item
   end
