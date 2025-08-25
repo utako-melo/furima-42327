@@ -7,7 +7,6 @@ RSpec.describe OrderAddress, type: :model do
     @order_address = FactoryBot.build(:order_address, item_id: item.id, user_id: user.id)
   end
   describe '商品の購入' do
-
     context '内容に問題がない場合' do
       it 'すべての値が正しく入力されていれば保存できる' do
         expect(@order_address).to be_valid
@@ -32,8 +31,8 @@ RSpec.describe OrderAddress, type: :model do
       it 'prefecture_idが1では登録できない' do
         @order_address.prefecture_id = 1
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Prefecture Select")
-      end  
+        expect(@order_address.errors.full_messages).to include('Prefecture Select')
+      end
       it 'cityが空だと保存できない' do
         @order_address.city = ''
         @order_address.valid?
@@ -52,17 +51,17 @@ RSpec.describe OrderAddress, type: :model do
       it 'phone_numberが全角数字だと保存できない' do
         @order_address.phone_number = '０１２３４５６７８９'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Phone number input only number")
+        expect(@order_address.errors.full_messages).to include('Phone number input only number')
       end
       it 'phone_numberが10桁未満だと保存できない' do
         @order_address.phone_number = '012345678'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Phone number input only number")
+        expect(@order_address.errors.full_messages).to include('Phone number input only number')
       end
       it 'phone_numberが11桁より大きいと保存できない' do
         @order_address.phone_number = '012345678901'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Phone number input only number")
+        expect(@order_address.errors.full_messages).to include('Phone number input only number')
       end
       it 'item_idが紐づいていないと保存できない' do
         @order_address.item_id = nil
