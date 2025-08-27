@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_unless_seller, only: [:edit, :update, :destroy]
+  before_action :redirect_if_unauthorized_or_sold, only: [:edit, :update, :destroy]
 
   def index
     @items = Item.all.order('created_at desc')
@@ -45,8 +45,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def redirect_unless_seller
-    return if current_user.id == @item.user_id
+  def redirect_if_unauthorized_or_sold
+    return if current_user.id == @item.user_id && !@item.order.present?
 
     redirect_to root_path
   end
